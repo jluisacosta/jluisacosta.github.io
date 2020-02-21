@@ -4,9 +4,10 @@ import './App.scss';
 
 const App = () =>
   <div className="App">
-    <header className="App-header">
+    <header className="App-header container">
       <img src={logo} className="App-logo" alt="logo" />
       <p>jluisacosta.github.io</p>
+      <i className="fas fa-code"/>
     </header>
   </div>
 
