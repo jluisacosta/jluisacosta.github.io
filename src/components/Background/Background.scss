@@ -1,0 +1,39 @@
+@import 'styles/_palette';
+
+.Background {
+  background: linear-gradient(to top, $charcoal-gray, $black);  
+  background: -webkit-linear-gradient(to top, $charcoal-gray, $black);  
+  width: 100%;
+  height:100vh;
+
+  &-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
+
+  &-square {
+    position: absolute;
+    display: block;
+    width: 20px;
+    height: 20px;
+    background: rgba($white, 0.25);
+    animation: animate 25s linear infinite;
+    bottom: -150px;  
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: translateY(0) rotate(0deg);
+    opacity: 1;
+  }
+
+  100% {
+    transform: translateY(-1000px) rotate(720deg);
+    opacity: 0;
+  }
+}

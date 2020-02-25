@@ -1,6 +1,11 @@
+// Base
+
+$white: #ffffff;
+$black: #000000;
+
 // Monokai palette
 
-$olive-black: #272822;
+$dark-olive: #272822;
 $dark-gray: #3e3d32; // Rulers, invisibles.
 $light-gray: #f8f8f2; // Text
 $gray: #cfcfc2; // Text (soft)
@@ -13,3 +18,7 @@ $violet: #ae81ff; // Constants, numbers, booleans.
 $blue: #66d9ef;
 $cyan: #a1efe4;
 $green: #a6e22e; // Class names, function names.
+
+// Others
+
+$charcoal-gray: #202020;
