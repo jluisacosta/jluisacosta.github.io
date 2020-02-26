@@ -1,6 +1,6 @@
 import React from 'react'
 import logo from 'static/images/logo.svg'
-import Background from '../Background'
+import Background from '../background'
 
 import './App.scss'
 
