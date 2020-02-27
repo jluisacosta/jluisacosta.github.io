@@ -1,4 +1,14 @@
+@import 'bulma/sass/utilities/_all';
+
 .BaseLayout {
-  background: red;
-  opacity: .3;
+  padding: 2rem;
+  height: 100%;
+
+  @include touch {
+    padding: 1.5rem;
+  }
+
+  @include mobile {
+    padding: 1rem;
+  }
 }

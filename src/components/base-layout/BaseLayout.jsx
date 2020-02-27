@@ -4,7 +4,7 @@ import PropTypes from 'prop-types'
 import './BaseLayout.scss'
 
 const BaseLayout = ({children}) =>
-  <div className="BaseLayout">
+  <div className="BaseLayout container">
     {children}
   </div>
 
