@@ -9,12 +9,10 @@ const App = () =>
   <div className="App">
     <Background>
       <BaseLayout>
-        <header className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h3 className="App-title">José Luis Acosta</h3>
-          <p className="App-paragraph">jluisacosta.github.io</p>
-          <i className="fas fa-code"/>
-        </header>
+        <img src={logo} style={{width: '100px'}}alt="logo" />
+        <h3 style={{fontFamily: 'Poppins', color: 'white'}}>José Luis Acosta</h3>
+        <p style={{fontFamily: 'Roboto', color: 'white'}}>jluisacosta.github.io</p>
+        <i className="fas fa-code" style={{color: 'white'}}/>
       </BaseLayout>
     </Background>
   </div>
