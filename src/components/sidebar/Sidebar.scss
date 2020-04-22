@@ -1,3 +1,11 @@
+@import 'bulma/sass/utilities/_all';
+
 .Sidebar {
-  background: red;
+  height: 100%;
+  width: 70px;
+  background: lightcoral;
+
+  @include mobile {
+    width: 50px;
+  }
 }

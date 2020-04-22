@@ -11,4 +11,12 @@
   @include mobile {
     padding: 1rem;
   }
+
+  &-profilePhoto {
+    background: lightgreen;
+  }
+
+  &-main {
+    background: lightgoldenrodyellow;
+  }
 }

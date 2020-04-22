@@ -9,9 +9,17 @@ const MAIN = 2
 
 const BaseLayout = ({children}) =>
   <div className="BaseLayout container">
-    <div className="BaseLayout-sideBar">{children[SIDEBAR]}</div>
-    <div className="BaseLayout-profilePhoto">{children[PROFILE_PHOTO]}</div>
-    <div className="BaseLayout-main">{children[MAIN]}</div>
+    <div className="columns is-mobile is-gapless">
+      <div className="column is-narrow">
+        {children[SIDEBAR]}
+      </div>
+      <div className="BaseLayout-profilePhoto column">
+        {children[PROFILE_PHOTO]}
+      </div>
+      <div className="BaseLayout-main column">
+        {children[MAIN]}
+      </div>
+    </div>
   </div>
 
 BaseLayout.displayName = 'BaseLayout'
