@@ -1,7 +1,9 @@
 import React from 'react'
-import logo from 'static/images/logo.svg'
 import Background from '../background'
 import BaseLayout from '../base-layout'
+import Sidebar from '../sidebar'
+import ProfilePhoto from '../profile-photo'
+import Main from '../main'
 
 import './App.scss'
 
@@ -9,10 +11,9 @@ const App = () =>
   <div className="App">
     <Background>
       <BaseLayout>
-        <img src={logo} style={{width: '100px'}}alt="logo" />
-        <h3 style={{fontFamily: 'Poppins', color: 'white'}}>José Luis Acosta</h3>
-        <p style={{fontFamily: 'Roboto', color: 'white'}}>jluisacosta.github.io</p>
-        <i className="fas fa-code" style={{color: 'white'}}/>
+        <Sidebar />
+        <ProfilePhoto />
+        <Main />
       </BaseLayout>
     </Background>
   </div>
