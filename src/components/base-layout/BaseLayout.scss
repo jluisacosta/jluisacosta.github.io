@@ -16,8 +16,22 @@
     padding: 0;
   }
 
+  &-sidebar {
+    flex: 0 0 70px;
+    background: lightcoral;
+
+    @include mobile {
+      flex-basis: 50px;
+    }
+  }
+
   &-profilePhoto {
+    flex: .135 1 260px;
     background: lightgreen;
+
+    @include fullhd {
+      flex-grow: .384;
+    }
   }
 
   &-main {
