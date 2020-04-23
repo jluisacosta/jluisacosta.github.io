@@ -1,8 +1,7 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from 'components/App';
+import 'styles/index.scss'
 
-import 'styles/index.scss';
-import '@fortawesome/fontawesome-free/js/all'
+import React from 'react'
+import ReactDOM from 'react-dom'
+import App from 'components/app'
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(<App />, document.getElementById('root'))
