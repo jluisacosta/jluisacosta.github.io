@@ -4,7 +4,7 @@ import logo from 'static/images/logo.svg'
 import './Main.scss'
 
 const Main = () =>
-  <div className="Main">
+  <div className="Main has-text-centered">
     <img src={logo} style={{width: '100px'}}alt="logo" />
     <h3 style={{fontFamily: 'Poppins', color: 'white'}}>José Luis Acosta</h3>
     <p style={{fontFamily: 'Roboto', color: 'white'}}>jluisacosta.github.io</p>
