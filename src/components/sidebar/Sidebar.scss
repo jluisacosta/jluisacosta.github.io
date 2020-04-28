@@ -1,40 +1,79 @@
 @import 'bulma/sass/utilities/_all';
 @import 'styles/_palette';
 
-$Sidebar-width: 70px;
-$Sidebar-width-mobile: 50px;
+$Sidebar-size: 70px;
+$Sidebar-size-mobile: 50px;
 
 .Sidebar {
   flex-direction: column;
   justify-content: space-between;
-  width: $Sidebar-width;
+  width: $Sidebar-size;
   height: 100%;
   background: $dark-olive;
 
   @include mobile {
-    width: $Sidebar-width-mobile;
+    width: $Sidebar-size-mobile;
+  }
+
+  &-hamburgerButton,
+  &-menuItem {
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+
+    @include mobile {
+      font-size: 1rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   &-hamburgerButton {
-    height: $Sidebar-width;
+    height: $Sidebar-size;
     background: $yellow;
-    font-size: 1.5rem;
     color: $dark-gray;
     transition-property: font-size;
     transition-duration: .25s;
 
     @include mobile {
-      height: $Sidebar-width-mobile;
-      font-size: 1rem;
+      height: $Sidebar-size-mobile;
     }
 
     &:hover {
       font-size: 2rem;
-      cursor: pointer;
 
       @include mobile {
         font-size: 1.5rem;
       }
+    }
+  }
+
+  &-menuItem {
+    height: $Sidebar-size-mobile;
+    color: $gray;
+    transition-property: color;
+    transition-duration: .5s;
+
+    &:first-child:hover {
+      color: $orange;
+    }
+
+    &:nth-child(2):hover {
+      color: $red;
+    }
+
+    &:nth-child(3):hover {
+      color: $magenta;
+    }
+
+    &:nth-child(4):hover {
+      color: $violet;
+    }
+
+    &:last-child:hover {
+      color: $blue;
     }
   }
 }
