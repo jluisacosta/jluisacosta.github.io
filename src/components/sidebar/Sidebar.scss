@@ -1,14 +1,40 @@
 @import 'bulma/sass/utilities/_all';
 @import 'styles/_palette';
 
+$Sidebar-width: 70px;
+$Sidebar-width-mobile: 50px;
+
 .Sidebar {
   flex-direction: column;
   justify-content: space-between;
-  width: 70px;
+  width: $Sidebar-width;
   height: 100%;
   background: $dark-olive;
 
   @include mobile {
-    width: 50px;
+    width: $Sidebar-width-mobile;
+  }
+
+  &-hamburgerButton {
+    height: $Sidebar-width;
+    background: $yellow;
+    font-size: 1.5rem;
+    color: $dark-gray;
+    transition-property: font-size;
+    transition-duration: .25s;
+
+    @include mobile {
+      height: $Sidebar-width-mobile;
+      font-size: 1rem;
+    }
+
+    &:hover {
+      font-size: 2rem;
+      cursor: pointer;
+
+      @include mobile {
+        font-size: 1.5rem;
+      }
+    }
   }
 }

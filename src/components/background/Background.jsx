@@ -18,7 +18,6 @@ const FLOATING_ITEMS = [
 
 const Background = ({children}) =>
   <div className="Background">
-    {children}
     <div className="Background-floatingContainer">
     {
       FLOATING_ITEMS.map(([left, width, height, animationDelay, animationDuration], i) =>
@@ -30,6 +29,7 @@ const Background = ({children}) =>
       )
     }
     </div>
+    {children}
   </div>
 
 Background.displayName = 'Background'

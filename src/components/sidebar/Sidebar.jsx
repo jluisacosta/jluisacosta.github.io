@@ -4,7 +4,9 @@ import './Sidebar.scss'
 
 const Sidebar = () =>
   <nav className="Sidebar is-flex">
-    <button>Menu</button>
+    <button className="Sidebar-hamburgerButton">
+      <i className="fas fa-bars" />
+    </button>
     <ul>
       <li>About Me</li>
       <li>Skills</li>
