@@ -13,9 +13,9 @@ const BaseLayout = ({children}) =>
       <aside className="BaseLayout-sidebar column is-narrow">
         {children[SIDEBAR]}
       </aside>
-      <div className="BaseLayout-profilePhoto column is-hidden-mobile">
+      <figure className="BaseLayout-profilePhoto column is-hidden-mobile">
         {children[PROFILE_PHOTO]}
-      </div>
+      </figure>
       <div className="BaseLayout-main column">
         {children[MAIN]}
       </div>
