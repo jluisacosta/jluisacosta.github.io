@@ -18,8 +18,11 @@ const Sidebar = () =>
     <ul>
       {
         MENU_ITEMS.map(([iconClass, description], i) =>
-          <li key={`sidebar-menu-item-${i}`} className="Sidebar-menuItem is-flex">
-            <i className={iconClass} title={description}/>
+          <li
+            key={`sidebar-menu-item-${i}`}
+            className="Sidebar-menuItem is-flex"
+            title={description}>
+            <i className={iconClass} />
           </li>
         )
       }
