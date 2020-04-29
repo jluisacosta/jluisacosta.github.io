@@ -17,8 +17,8 @@ const Sidebar = () =>
     </button>
     <ul>
       {
-        MENU_ITEMS.map(([iconClass, description]) =>
-          <li className="Sidebar-menuItem is-flex">
+        MENU_ITEMS.map(([iconClass, description], i) =>
+          <li key={`sidebar-menu-item-${i}`} className="Sidebar-menuItem is-flex">
             <i className={iconClass} title={description}/>
           </li>
         )
