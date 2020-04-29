@@ -16,7 +16,8 @@ $Sidebar-size-mobile: 50px;
   }
 
   &-hamburgerButton,
-  &-menuItem {
+  &-menuItem,
+  &-downloadButton {
     justify-content: center;
     align-items: center;
     font-size: 1.5rem;
@@ -30,10 +31,9 @@ $Sidebar-size-mobile: 50px;
     }
   }
 
-  &-hamburgerButton {
+  &-hamburgerButton,
+  &-downloadButton {
     height: $Sidebar-size;
-    background: $yellow;
-    color: $dark-gray;
     transition-property: font-size;
     transition-duration: .25s;
 
@@ -50,11 +50,20 @@ $Sidebar-size-mobile: 50px;
     }
   }
 
+  &-hamburgerButton {
+    background: $yellow;
+    color: $dark-gray;
+  }
+
   &-menuItem {
     height: $Sidebar-size-mobile;
     color: $gray;
     transition-property: color;
-    transition-duration: .5s;
+    transition-duration: 1s;
+
+    @include mobile {
+      height: calc(#{$Sidebar-size-mobile} - 10px);
+    }
 
     &:first-child:hover {
       color: $orange;
@@ -74,6 +83,15 @@ $Sidebar-size-mobile: 50px;
 
     &:last-child:hover {
       color: $blue;
+    }
+  }
+
+  &-downloadButton {
+    background: transparent;
+    color: $gray;
+
+    &:hover {
+      color: $green;
     }
   }
 }

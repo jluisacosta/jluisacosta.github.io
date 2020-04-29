@@ -12,7 +12,7 @@ const MENU_ITEMS = [
 
 const Sidebar = () =>
   <nav className="Sidebar is-flex">
-    <button className="Sidebar-hamburgerButton is-flex">
+    <button className="Sidebar-hamburgerButton is-flex" title="Menu">
       <i className="fas fa-bars" />
     </button>
     <ul>
@@ -24,7 +24,9 @@ const Sidebar = () =>
         )
       }
     </ul>
-    <button>Download Resumé</button>
+    <button className="Sidebar-downloadButton is-flex" title="Download Resume">
+      <i className="fas fa-cloud-download-alt" />
+    </button>
   </nav>
 
 Sidebar.displayName = 'Sidebar'
