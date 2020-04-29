@@ -9,10 +9,10 @@ const MAIN = 2
 
 const BaseLayout = ({children}) =>
   <div className="BaseLayout container">
-    <div className="columns is-mobile is-gapless">
-      <div className="BaseLayout-sidebar column">
+    <div className="BaseLayout-columns columns is-mobile is-gapless">
+      <aside className="BaseLayout-sidebar column is-narrow">
         {children[SIDEBAR]}
-      </div>
+      </aside>
       <div className="BaseLayout-profilePhoto column is-hidden-mobile">
         {children[PROFILE_PHOTO]}
       </div>

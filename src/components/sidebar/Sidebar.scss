@@ -1,2 +1,97 @@
+@import 'bulma/sass/utilities/_all';
+@import 'styles/_palette';
+
+$Sidebar-size: 70px;
+$Sidebar-size-mobile: 50px;
+
 .Sidebar {
+  flex-direction: column;
+  justify-content: space-between;
+  width: $Sidebar-size;
+  height: 100%;
+  background: $dark-olive;
+
+  @include mobile {
+    width: $Sidebar-size-mobile;
+  }
+
+  &-hamburgerButton,
+  &-menuItem,
+  &-downloadButton {
+    justify-content: center;
+    align-items: center;
+    font-size: 1.5rem;
+
+    @include mobile {
+      font-size: 1rem;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
+  &-hamburgerButton,
+  &-downloadButton {
+    height: $Sidebar-size;
+    transition-property: font-size;
+    transition-duration: .25s;
+
+    @include mobile {
+      height: $Sidebar-size-mobile;
+    }
+
+    &:hover {
+      font-size: 2rem;
+
+      @include mobile {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+  &-hamburgerButton {
+    background: $yellow;
+    color: $dark-gray;
+  }
+
+  &-menuItem {
+    height: $Sidebar-size-mobile;
+    color: $medium-gray;
+    transition-property: color;
+    transition-duration: 1s;
+
+    @include mobile {
+      height: calc(#{$Sidebar-size-mobile} - 10px);
+    }
+
+    &:first-child:hover {
+      color: $orange;
+    }
+
+    &:nth-child(2):hover {
+      color: $red;
+    }
+
+    &:nth-child(3):hover {
+      color: $magenta;
+    }
+
+    &:nth-child(4):hover {
+      color: $violet;
+    }
+
+    &:last-child:hover {
+      color: $blue;
+    }
+  }
+
+  &-downloadButton {
+    background: transparent;
+    color: $gray;
+
+    &:hover {
+      color: $green;
+    }
+  }
 }

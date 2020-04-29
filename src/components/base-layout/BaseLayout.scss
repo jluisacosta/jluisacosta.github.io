@@ -16,11 +16,15 @@
     padding: 0;
   }
 
+  &-columns {
+    height: 100%;
+  }
+
   &-sidebar {
-    flex: 0 0 70px;
+    margin: 40px 0 !important;
 
     @include mobile {
-      flex-basis: 50px;
+      margin: 0 !important;
     }
   }
 

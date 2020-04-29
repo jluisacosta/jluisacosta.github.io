@@ -18,16 +18,16 @@ const FLOATING_ITEMS = [
 
 const Background = ({children}) =>
   <div className="Background">
-    <div className="Background-container">
-    {
-      FLOATING_ITEMS.map(([left, width, height, animationDelay, animationDuration], i) =>
-        <div
-          key={`bg-square-${i}`}
-          className="Background-square"
-          style={{left, width, height, animationDelay, animationDuration}}>
-        </div>
-      )
-    }
+    <div className="Background-floatingContainer">
+      {
+        FLOATING_ITEMS.map(([left, width, height, animationDelay, animationDuration], i) =>
+          <div
+            key={`bg-square-${i}`}
+            className="Background-square"
+            style={{left, width, height, animationDelay, animationDuration}}>
+          </div>
+        )
+      }
     </div>
     {children}
   </div>
