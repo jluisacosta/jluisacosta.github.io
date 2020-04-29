@@ -1,0 +1,7 @@
+$mobile-xs-max-width: 575px;
+
+@mixin mobile-xs {
+  @media screen and (max-width: $mobile-xs-max-width) {
+    @content;
+  }
+}
