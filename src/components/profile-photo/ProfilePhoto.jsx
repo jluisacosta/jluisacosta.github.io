@@ -7,12 +7,16 @@ const ProfilePhoto = () =>
   <div
     className="ProfilePhoto is-flex has-text-centered"
     style={{backgroundImage: `url(${profilePhoto})`}}>
-    <h1 className="ProfilePhoto-title">
-      <strong>José Luis Acosta</strong>
-    </h1>
-    <h2 className="ProfilePhoto-subtitle">
-      <strong>Web Developer</strong>
-    </h2>
+    <h2 className="ProfilePhoto-title">José Luis Acosta</h2>
+    <h5 className="ProfilePhoto-subtitle">Web Developer</h5>
+    <ul className="ProfilePhoto-socialMedia is-flex">
+      <li className="ProfilePhoto-icon">
+        <i className="fab fa-linkedin" />
+      </li>
+      <li className="ProfilePhoto-icon">
+        <i className="fab fa-github" />
+      </li>
+    </ul>
   </div>
 
 ProfilePhoto.displayName = 'ProfilePhoto'
