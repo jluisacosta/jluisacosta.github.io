@@ -1,19 +1,26 @@
-import React from 'react'
+import React, {useState, useCallback} from 'react'
 import BaseLayout from '../base-layout'
 import Sidebar from '../sidebar'
 import ProfilePhoto from '../profile-photo'
 import Main from '../main'
+import {DEFAULT_SECTION} from 'utils'
 
 import './App.scss'
 
-const App = () =>
+const App = () => {
+  const [activeSection, setActiveSection] = useState(DEFAULT_SECTION)
+  const onSelect = useCallback(e => setActiveSection(Number(e.target.dataset.section)), [])
+
+  return (
   <div className="App">
     <BaseLayout>
-      <Sidebar />
+      <Sidebar activeSection={activeSection} onSelect={onSelect} />
       <ProfilePhoto />
-      <Main />
+      <Main activeSection={activeSection} />
     </BaseLayout>
   </div>
+  )
+}
 
 App.displayName = 'App'
 

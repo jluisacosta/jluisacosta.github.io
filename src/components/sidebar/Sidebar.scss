@@ -3,6 +3,7 @@
 
 $Sidebar-size: 70px;
 $Sidebar-size-mobile: 50px;
+$Sidebar-menuItems: (1: $orange, 2: $red, 3: $magenta, 4: $violet, 5: $blue);
 
 .Sidebar {
   flex-direction: column;
@@ -65,25 +66,17 @@ $Sidebar-size-mobile: 50px;
       height: calc(#{$Sidebar-size-mobile} - 10px);
     }
 
-    &:first-child:hover {
-      color: $orange;
+    @each $nth-child, $color in $Sidebar-menuItems {
+      &:nth-child(#{$nth-child}) {
+        &.isSelected, &:hover {
+          color: $color;
+        }
+      }
     }
+  }
 
-    &:nth-child(2):hover {
-      color: $red;
-    }
-
-    &:nth-child(3):hover {
-      color: $magenta;
-    }
-
-    &:nth-child(4):hover {
-      color: $violet;
-    }
-
-    &:last-child:hover {
-      color: $blue;
-    }
+  &-icon {
+    pointer-events: none;
   }
 
   &-downloadButton {

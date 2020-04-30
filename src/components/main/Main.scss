@@ -1,6 +1,12 @@
 @import 'styles/_palette';
 
 .Main {
+  padding: 1rem;
   height: 100%;
-  background: $dark-olive;
+  background: $dark-gray;
+
+  &-title {
+    font-family: 'Poppins';
+    color: $light-gray;
+  }
 }
