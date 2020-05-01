@@ -1,0 +1,10 @@
+@import 'styles/_palette';
+
+.Section {
+  background: $medium-gray;
+
+  &-title {
+    font-family: 'Poppins';
+    color: $light-gray;
+  }
+}
