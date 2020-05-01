@@ -32,7 +32,11 @@
 
   &-profilePhoto {
     min-width: 260px;
-    max-width: 470px;
+    max-width: 350px;
+
+    @include widescreen {
+      max-width: 470px;
+    }
 
     @include fullhd {
       max-width: 540px;

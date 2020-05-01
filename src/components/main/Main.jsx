@@ -5,7 +5,7 @@ import Section from '../section'
 import './Main.scss'
 
 const Main = ({activeSection}) =>
-  <main className="Main">
+  <main className="Main is-relative">
     <Section activeSection={activeSection} />
   </main>
 
