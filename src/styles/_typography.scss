@@ -1,4 +1,6 @@
-@import 'styles/_mixins';
+@import 'mixins';
+
+$rem-base: 16px;
 
 strong {
   color: inherit;

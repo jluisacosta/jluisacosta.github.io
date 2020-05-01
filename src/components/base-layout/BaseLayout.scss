@@ -1,5 +1,6 @@
 @import 'bulma/sass/utilities/_all';
 @import 'styles/_mixins';
+@import 'styles/_functions';
 
 .BaseLayout {
   padding: 2rem;
@@ -23,7 +24,7 @@
 
   &-sidebar,
   &-main {
-    margin: 40px 0 !important;
+    margin: rem(40px) 0 !important;
 
     @include mobile {
       margin: 0 !important;

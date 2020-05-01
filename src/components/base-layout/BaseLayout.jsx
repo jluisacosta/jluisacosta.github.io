@@ -1,24 +1,21 @@
 import React from 'react'
 import PropTypes from 'prop-types'
+import {LAYOUT_SECTIONS} from 'utils'
 
 import './BaseLayout.scss'
-
-const SIDEBAR = 0
-const PROFILE_PHOTO = 1
-const MAIN = 2
 
 const BaseLayout = ({children}) =>
   <div className="BaseLayout container">
     <div className="BaseLayout-columns columns is-mobile is-gapless">
       <aside className="BaseLayout-sidebar column is-narrow">
-        {children[SIDEBAR]}
+        {children[LAYOUT_SECTIONS.Sidebar]}
       </aside>
       <figure className="BaseLayout-profilePhoto column is-hidden-mobile">
-        {children[PROFILE_PHOTO]}
+        {children[LAYOUT_SECTIONS.ProfilePhoto]}
       </figure>
-      <div className="BaseLayout-main column">
-        {children[MAIN]}
-      </div>
+      <main className="BaseLayout-main column">
+        {children[LAYOUT_SECTIONS.Main]}
+      </main>
     </div>
   </div>
 

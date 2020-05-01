@@ -1,3 +1,9 @@
+export const LAYOUT_SECTIONS = {
+  Sidebar: 0,
+  ProfilePhoto: 1,
+  Main: 2
+}
+
 export const SECTIONS = {
   AboutMe: 0,
   Skills: 1,
