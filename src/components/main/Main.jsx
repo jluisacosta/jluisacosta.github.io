@@ -1,27 +1,14 @@
-import React, {useRef, useEffect} from 'react'
+import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
 import Section from '../section'
 
 import './Main.scss'
 
-const TRANSITIONEND = 'transitionend'
-
-const Main = ({className, activeSection, onTransitionEnd}) => {
-  const mainRef = useRef(null)
-  
-  useEffect(() => {
-    let mainElement = mainRef.current
-    mainElement.addEventListener(TRANSITIONEND, onTransitionEnd)
-    return () => mainElement.removeEventListener(TRANSITIONEND, onTransitionEnd)
-  }, []) // eslint-disable-line react-hooks/exhaustive-deps
-  
-  return (
-    <div className={classnames('Main is-relative', className)} ref={mainRef}>
-      <Section activeSection={activeSection} />
-    </div>
-  )
-}
+const Main = ({className, activeSection, onTransitionEnd}) =>
+  <div className={classnames('Main is-relative', className)} onTransitionEnd={onTransitionEnd}>
+    <Section activeSection={activeSection} />
+  </div>
 
 Main.displayName = 'Main'
 

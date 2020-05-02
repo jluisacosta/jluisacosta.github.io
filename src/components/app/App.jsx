@@ -1,5 +1,4 @@
 import React, {useState, useCallback} from 'react'
-import classnames from 'classnames'
 import BaseLayout from '../base-layout'
 import Sidebar from '../sidebar'
 import ProfilePhoto from '../profile-photo'
@@ -9,32 +8,33 @@ import {DEFAULT_SECTION, TRANSITION_CLASS} from 'utils'
 import './App.scss'
 
 const App = () => {
-  const [activeSection, setActiveSection] = useState(DEFAULT_SECTION)
-  const [previousSection, setPreviousSection] = useState(DEFAULT_SECTION)
+  const [section, setSection] = useState({previous: DEFAULT_SECTION, current: DEFAULT_SECTION})
   const [isInTransition, setIsInTransition] = useState(false)
 
   const onSelect = useCallback(({target: {dataset}}) => {
-    setIsInTransition(true)
-    setPreviousSection(activeSection)
-    setActiveSection(Number(dataset.section))
-  }, [activeSection])
-  
-  const onTransitionEnd = useCallback(({target: {className}}) => {
-    if (className.includes(TRANSITION_CLASS)) {
-      setIsInTransition(false)
+    const selected = Number(dataset.section)
+    const {current} = section
+    
+    if (selected !== current) {
+      setIsInTransition(true)
+      setSection({previous: current, current: selected})
     }
+  }, [section])
+
+  const onTransitionEnd = useCallback(({target: {className}}) => {
+    if (className.includes(TRANSITION_CLASS)) setIsInTransition(false)
   }, [])
 
   return (
   <div className="App">
     <BaseLayout>
       <Sidebar
-        activeSection={activeSection}
+        activeSection={section.current}
         onSelect={onSelect} />
       <ProfilePhoto />
       <Main
-        className={classnames({[TRANSITION_CLASS]: isInTransition})}
-        activeSection={isInTransition ? previousSection : activeSection}
+        className={isInTransition ? TRANSITION_CLASS : ''}
+        activeSection={isInTransition ? section.previous : section.current}
         onTransitionEnd={onTransitionEnd} />
     </BaseLayout>
   </div>
