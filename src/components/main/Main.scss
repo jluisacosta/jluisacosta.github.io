@@ -24,8 +24,15 @@
 
 .Main {
   padding: 1.25rem rem(25px) 1.25rem rem(35px);
+  width: 100%;
   height: 100%;
-  background: $dark-olive;
+  background-color: $dark-olive;
+  transition-property: width;
+  transition-duration: .5s;
+
+  &.isMounted {
+    width: 0;
+  }
 
   @include mobile {
     padding: rem(10px) rem(15px) rem(10px) rem(25px);
