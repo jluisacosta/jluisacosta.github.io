@@ -35,8 +35,7 @@ $Sidebar-menuItems: (1: $orange, 2: $red, 3: $magenta, 4: $violet, 5: $blue);
   &-hamburgerButton,
   &-downloadButton {
     height: $Sidebar-size;
-    transition-property: font-size;
-    transition-duration: .25s;
+    transition: font-size, .25s;
 
     @include mobile {
       height: $Sidebar-size-mobile;
@@ -59,8 +58,7 @@ $Sidebar-menuItems: (1: $orange, 2: $red, 3: $magenta, 4: $violet, 5: $blue);
   &-menuItem {
     height: $Sidebar-size-mobile;
     color: $medium-gray;
-    transition-property: color;
-    transition-duration: 1s;
+    transition: color, 1s;
 
     @include mobile {
       height: calc(#{$Sidebar-size-mobile} - 10px);

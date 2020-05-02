@@ -27,10 +27,9 @@
   width: 100%;
   height: 100%;
   background-color: $dark-olive;
-  transition-property: width;
-  transition-duration: .5s;
+  transition: width, .5s;
 
-  &.isMounted {
+  &.isInTransition {
     width: 0;
   }
 
