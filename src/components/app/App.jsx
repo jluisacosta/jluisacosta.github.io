@@ -1,22 +1,41 @@
 import React, {useState, useCallback} from 'react'
+import classnames from 'classnames'
 import BaseLayout from '../base-layout'
 import Sidebar from '../sidebar'
 import ProfilePhoto from '../profile-photo'
 import Main from '../main'
-import {DEFAULT_SECTION} from 'utils'
+import {DEFAULT_SECTION, TRANSITION_CLASS} from 'utils'
 
 import './App.scss'
 
 const App = () => {
   const [activeSection, setActiveSection] = useState(DEFAULT_SECTION)
-  const onSelect = useCallback(e => setActiveSection(Number(e.target.dataset.section)), [])
+  const [previousSection, setPreviousSection] = useState(DEFAULT_SECTION)
+  const [isInTransition, setIsInTransition] = useState(false)
+
+  const onSelect = useCallback(({target: {dataset}}) => {
+    setIsInTransition(true)
+    setPreviousSection(activeSection)
+    setActiveSection(Number(dataset.section))
+  }, [activeSection])
+  
+  const onTransitionEnd = useCallback(({target: {className}}) => {
+    if (className.includes(TRANSITION_CLASS)) {
+      setIsInTransition(false)
+    }
+  }, [])
 
   return (
   <div className="App">
     <BaseLayout>
-      <Sidebar activeSection={activeSection} onSelect={onSelect} />
+      <Sidebar
+        activeSection={activeSection}
+        onSelect={onSelect} />
       <ProfilePhoto />
-      <Main activeSection={activeSection} />
+      <Main
+        className={classnames({[TRANSITION_CLASS]: isInTransition})}
+        activeSection={isInTransition ? previousSection : activeSection}
+        onTransitionEnd={onTransitionEnd} />
     </BaseLayout>
   </div>
   )

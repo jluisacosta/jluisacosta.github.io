@@ -14,6 +14,8 @@ export const SECTIONS = {
 
 export const DEFAULT_SECTION = SECTIONS.AboutMe
 
+export const TRANSITION_CLASS = 'isInTransition'
+
 export const MENU_ITEMS = [
   [SECTIONS.AboutMe, 'fas fa-user', 'About Me'],
   [SECTIONS.Skills, 'fas fa-code', 'Skills'],
