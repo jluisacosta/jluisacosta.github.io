@@ -1,5 +1,6 @@
 @import 'bulma/sass/utilities/_all';
 @import 'styles/_mixins';
+@import 'styles/_functions';
 
 .BaseLayout {
   padding: 2rem;
@@ -23,7 +24,7 @@
 
   &-sidebar,
   &-main {
-    margin: 40px 0 !important;
+    margin: rem(40px) 0 !important;
 
     @include mobile {
       margin: 0 !important;
@@ -32,10 +33,24 @@
 
   &-profilePhoto {
     min-width: 260px;
-    max-width: 470px;
+    max-width: 350px;
+
+    @include widescreen {
+      max-width: 470px;
+    }
 
     @include fullhd {
       max-width: 540px;
+    }
+  }
+
+  &-main {
+    @include tablet {
+      min-width: 376px;
+    }
+
+    @include mobile {
+      min-width: 320px;
     }
   }
 }

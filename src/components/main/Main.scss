@@ -1,6 +1,44 @@
+@import 'bulma/sass/utilities/_all';
 @import 'styles/_palette';
+@import 'styles/_functions';
+
+@mixin Main-pseudo-element-gradient($pseudo-element, $gradient-start, $gradient-end) {
+  &::#{$pseudo-element} {
+    content: '';
+    position: absolute;
+    display: block;
+    height: 70px;
+    width: 100%;
+    left: 0;
+    #{$gradient-start}: 0;
+    background: linear-gradient(to $gradient-end, $dark-olive 45%, transparent);  
+    background: -webkit-linear-gradient(to $gradient-end, $dark-olive 45%, transparent); 
+
+    @include mobile {
+      height: 50px;
+      background: linear-gradient(to $gradient-end, $dark-olive 50%, transparent);  
+      background: -webkit-linear-gradient(to $gradient-end, $dark-olive 50%, transparent);
+    }
+  }
+}
 
 .Main {
+  padding: 1.25rem rem(25px) 1.25rem rem(35px);
+  width: 100%;
   height: 100%;
-  background: $dark-olive;
+  background-color: $dark-olive;
+  transition: width, .5s;
+
+  &.isInTransition {
+    width: 0;
+  }
+
+  @include mobile {
+    padding: rem(10px) rem(15px) rem(10px) rem(25px);
+    border-left: 1px solid $dark-gray;
+  }
+
+  @include Main-pseudo-element-gradient(before, top, bottom);
+  
+  @include Main-pseudo-element-gradient(after, bottom, top);
 }

@@ -1,30 +1,31 @@
 import React from 'react'
+import PropTypes from 'prop-types'
+import classnames from 'classnames'
+import {MENU_ITEMS} from 'utils'
 
 import './Sidebar.scss'
 
-const MENU_ITEMS = [
-  ['fas fa-user', 'About Me'],
-  ['fas fa-code', 'Skills'],
-  ['fas fa-briefcase', 'Experience'],
-  ['fas fa-graduation-cap', 'Education'],
-  ['fas fa-envelope', 'Contact Me']
-]
-
-const Sidebar = () =>
+const Sidebar = ({activeSection, onSelect}) =>
   <nav className="Sidebar is-flex">
     <button className="Sidebar-hamburgerButton is-flex" title="Menu">
       <i className="fas fa-bars" />
     </button>
     <ul>
       {
-        MENU_ITEMS.map(([iconClass, description], i) =>
-          <li
-            key={`sidebar-menu-item-${i}`}
-            className="Sidebar-menuItem is-flex"
-            title={description}>
-            <i className={iconClass} />
-          </li>
-        )
+        MENU_ITEMS.map(([section, iconClass, description], i) => {
+          const itemClassName = classnames('Sidebar-menuItem is-flex', {isSelected: activeSection === section})
+          const iconClassName = classnames('Sidebar-icon', iconClass)
+
+          return (
+            <li key={`sidebar-menu-item-${i}`}
+              className={itemClassName}
+              data-section={section}
+              onClick={onSelect}
+              title={description}>
+              <i className={iconClassName} />
+            </li>
+          )
+        })
       }
     </ul>
     <button className="Sidebar-downloadButton is-flex" title="Download Resume">
@@ -33,5 +34,10 @@ const Sidebar = () =>
   </nav>
 
 Sidebar.displayName = 'Sidebar'
+
+Sidebar.propTypes = {
+  activeSection: PropTypes.number,
+  onSelect: PropTypes.func
+}
 
 export default Sidebar

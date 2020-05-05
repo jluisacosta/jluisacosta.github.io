@@ -1,0 +1,31 @@
+@import 'bulma/sass/utilities/_all';
+@import 'styles/_palette';
+
+.SectionContainer {
+  padding: 1rem 0;
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+  white-space: nowrap;
+  scrollbar-width: thin;
+  scrollbar-color: $dark-gray $dark-olive;
+
+  &-title {
+    font-family: 'Poppins';
+    color: $light-gray;
+  }
+
+  &::-webkit-scrollbar {
+    width: 10px;
+
+    &-track {
+      background: $dark-olive;
+    }
+
+    &-thumb {
+      background: $dark-gray;
+      border-radius: 5px;
+      border: 3px solid $dark-olive;
+    }
+  }
+}
