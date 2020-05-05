@@ -43,4 +43,14 @@
       max-width: 540px;
     }
   }
+
+  &-main {
+    @include tablet {
+      min-width: 376px;
+    }
+
+    @include mobile {
+      min-width: 320px;
+    }
+  }
 }

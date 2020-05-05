@@ -1,9 +1,12 @@
+@import 'bulma/sass/utilities/_all';
 @import 'styles/_palette';
 
 .SectionContainer {
   padding: 1rem 0;
   height: 100%;
+  overflow-x: hidden;
   overflow-y: auto;
+  white-space: nowrap;
   scrollbar-width: thin;
   scrollbar-color: $dark-gray $dark-olive;
 
