@@ -3,9 +3,12 @@ import BaseLayout from '../base-layout'
 import Sidebar from '../sidebar'
 import ProfilePhoto from '../profile-photo'
 import Main from '../main'
-import {DEFAULT_SECTION, TRANSITION_CLASS} from 'utils'
+import {SECTIONS} from 'utils'
 
 import './App.scss'
+
+const DEFAULT_SECTION = SECTIONS.AboutMe
+const TRANSITION_CLASS = 'isInTransition'
 
 const App = () => {
   const [section, setSection] = useState({previous: DEFAULT_SECTION, current: DEFAULT_SECTION})

@@ -1,9 +1,3 @@
-export const LAYOUT_SECTIONS = {
-  Sidebar: 0,
-  ProfilePhoto: 1,
-  Main: 2
-}
-
 export const SECTIONS = {
   AboutMe: 0,
   Skills: 1,
@@ -11,10 +5,6 @@ export const SECTIONS = {
   Education: 3,
   ContactMe: 4
 }
-
-export const DEFAULT_SECTION = SECTIONS.AboutMe
-
-export const TRANSITION_CLASS = 'isInTransition'
 
 export const MENU_ITEMS = [
   [SECTIONS.AboutMe, 'fas fa-user', 'About Me'],

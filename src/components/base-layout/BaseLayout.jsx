@@ -1,8 +1,13 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import {LAYOUT_SECTIONS} from 'utils'
 
 import './BaseLayout.scss'
+
+const LAYOUT_SECTIONS = {
+  Sidebar: 0,
+  ProfilePhoto: 1,
+  Main: 2
+}
 
 const BaseLayout = ({children}) =>
   <div className="BaseLayout container">
