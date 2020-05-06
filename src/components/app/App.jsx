@@ -3,18 +3,21 @@ import BaseLayout from '../base-layout'
 import Sidebar from '../sidebar'
 import ProfilePhoto from '../profile-photo'
 import Main from '../main'
-import {DEFAULT_SECTION, TRANSITION_CLASS} from 'utils'
+import {SECTIONS} from '../sections'
 
 import './App.scss'
+
+const DEFAULT_SECTION = SECTIONS.AboutMe.name
+const TRANSITION_CLASS = 'isInTransition'
 
 const App = () => {
   const [section, setSection] = useState({previous: DEFAULT_SECTION, current: DEFAULT_SECTION})
   const [isInTransition, setIsInTransition] = useState(false)
 
   const onSelect = useCallback(({target: {dataset}}) => {
-    const selected = Number(dataset.section)
+    const selected = dataset.section
     const {current} = section
-    
+
     if (selected !== current) {
       setIsInTransition(true)
       setSection({previous: current, current: selected})

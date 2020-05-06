@@ -1,8 +1,8 @@
 @import 'styles/_palette';
 
 .App {
-  background: linear-gradient(to top, $charcoal-gray, $black);  
-  background: -webkit-linear-gradient(to top, $charcoal-gray, $black);  
+  background: linear-gradient(to top, $charcoal-gray, $black);
+  background: -webkit-linear-gradient(to top, $charcoal-gray, $black);
   width: 100%;
   height:100vh;
 }

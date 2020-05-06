@@ -1,7 +1,7 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import {MENU_ITEMS} from 'utils'
+import {SECTIONS} from '../sections'
 
 import './Sidebar.scss'
 
@@ -12,17 +12,13 @@ const Sidebar = ({activeSection, onSelect}) =>
     </button>
     <ul>
       {
-        MENU_ITEMS.map(([section, iconClass, description], i) => {
-          const itemClassName = classnames('Sidebar-menuItem is-flex', {isSelected: activeSection === section})
-          const iconClassName = classnames('Sidebar-icon', iconClass)
+        Object.keys(SECTIONS).map(key => {
+          const {name, icon, title} = SECTIONS[key]
+          const className = classnames('Sidebar-menuItem is-flex', {isSelected: activeSection === name})
 
           return (
-            <li key={`sidebar-menu-item-${i}`}
-              className={itemClassName}
-              data-section={section}
-              onClick={onSelect}
-              title={description}>
-              <i className={iconClassName} />
+            <li key={key} data-section={name} className={className} title={title} onClick={onSelect}>
+              <i className={classnames('Sidebar-icon', icon)} />
             </li>
           )
         })
@@ -36,7 +32,7 @@ const Sidebar = ({activeSection, onSelect}) =>
 Sidebar.displayName = 'Sidebar'
 
 Sidebar.propTypes = {
-  activeSection: PropTypes.number,
+  activeSection: PropTypes.string,
   onSelect: PropTypes.func
 }
 

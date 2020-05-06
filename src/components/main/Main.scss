@@ -11,12 +11,12 @@
     width: 100%;
     left: 0;
     #{$gradient-start}: 0;
-    background: linear-gradient(to $gradient-end, $dark-olive 45%, transparent);  
-    background: -webkit-linear-gradient(to $gradient-end, $dark-olive 45%, transparent); 
+    background: linear-gradient(to $gradient-end, $dark-olive 45%, transparent);
+    background: -webkit-linear-gradient(to $gradient-end, $dark-olive 45%, transparent);
 
     @include mobile {
       height: 50px;
-      background: linear-gradient(to $gradient-end, $dark-olive 50%, transparent);  
+      background: linear-gradient(to $gradient-end, $dark-olive 50%, transparent);
       background: -webkit-linear-gradient(to $gradient-end, $dark-olive 50%, transparent);
     }
   }
@@ -39,6 +39,35 @@
   }
 
   @include Main-pseudo-element-gradient(before, top, bottom);
-  
+
   @include Main-pseudo-element-gradient(after, bottom, top);
+
+  &-section {
+    padding: 1rem 0;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    white-space: nowrap;
+    scrollbar-width: thin;
+    scrollbar-color: $dark-gray $dark-olive;
+  }
+
+  &-title {
+    font-family: 'Poppins';
+    color: $light-gray;
+  }
+
+  &::-webkit-scrollbar {
+    width: 10px;
+
+    &-track {
+      background: $dark-olive;
+    }
+
+    &-thumb {
+      background: $dark-gray;
+      border-radius: 5px;
+      border: 3px solid $dark-olive;
+    }
+  }
 }
