@@ -17,7 +17,7 @@ const App = () => {
   const onSelect = useCallback(({target: {dataset}}) => {
     const selected = dataset.section
     const {current} = section
-    
+
     if (selected !== current) {
       setIsInTransition(true)
       setSection({previous: current, current: selected})

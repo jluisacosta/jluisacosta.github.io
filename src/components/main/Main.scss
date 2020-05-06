@@ -11,12 +11,12 @@
     width: 100%;
     left: 0;
     #{$gradient-start}: 0;
-    background: linear-gradient(to $gradient-end, $dark-olive 45%, transparent);  
-    background: -webkit-linear-gradient(to $gradient-end, $dark-olive 45%, transparent); 
+    background: linear-gradient(to $gradient-end, $dark-olive 45%, transparent);
+    background: -webkit-linear-gradient(to $gradient-end, $dark-olive 45%, transparent);
 
     @include mobile {
       height: 50px;
-      background: linear-gradient(to $gradient-end, $dark-olive 50%, transparent);  
+      background: linear-gradient(to $gradient-end, $dark-olive 50%, transparent);
       background: -webkit-linear-gradient(to $gradient-end, $dark-olive 50%, transparent);
     }
   }
@@ -39,7 +39,7 @@
   }
 
   @include Main-pseudo-element-gradient(before, top, bottom);
-  
+
   @include Main-pseudo-element-gradient(after, bottom, top);
 
   &-section {
@@ -51,7 +51,7 @@
     scrollbar-width: thin;
     scrollbar-color: $dark-gray $dark-olive;
   }
-  
+
   &-title {
     font-family: 'Poppins';
     color: $light-gray;
