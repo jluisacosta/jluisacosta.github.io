@@ -1,17 +1,22 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import classnames from 'classnames'
-import SectionContainer from '../section-container'
 import {SECTIONS} from '../sections/index'
 
 import './Main.scss'
 
 const Main = ({className, activeSection, onTransitionEnd}) => {
+  const classNames = classnames('Main is-relative', className)
   const {title, view} = SECTIONS[activeSection]
 
   return (
-    <div className={classnames('Main is-relative', className)} onTransitionEnd={onTransitionEnd}>
-      <SectionContainer title={title.toLowerCase()}>{view}</SectionContainer>
+    <div className={classNames} onTransitionEnd={onTransitionEnd}>
+      <section className="Main-section">
+        <header className="Main-header">
+          <h1 className="Main-title">{title.toLowerCase()}</h1>
+        </header>
+        {view}
+      </section>
     </div>
   )
 }
